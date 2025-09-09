@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sog'lom Dieta Kalkulyatori (mobil mos)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🟢 Sog'lom Dieta Kalkulyatori</h1>
+      <p class="subtitle">16 yosh atrofidagi o'smirlar uchun ehtiyotkor tavsiyalar. Mobilga moslangan!</p>
+    </header>
+
+    <section class="card">
+      <h2>1) Ma'lumotlarni kiriting</h2>
+      <div class="grid">
+        <label>Jins
+          <select id="gender">
+            <option value="male" selected>Erkak</option>
+            <option value="female">Ayol</option>
+          </select>
+        </label>
+
+        <label>Yosh (yil)
+          <input id="age" type="number" min="12" max="19" value="16" />
+        </label>
+
+        <label>Vazn (kg)
+          <input id="weight" type="number" min="30" max="200" step="0.1" value="97" />
+        </label>
+
+        <label>Bo'y (sm)
+          <input id="height" type="number" min="130" max="210" value="175" />
+        </label>
+
+        <label>Maqsad vazn (kg)
+          <input id="goalWeight" type="number" min="40" max="200" step="0.1" value="75" />
+        </label>
+
+        <label>Faollik darajasi
+          <select id="activity">
+            <option value="1.2">Past: kam harakat</option>
+            <option value="1.375">O'rtacha: 1–3 kun sport</option>
+            <option value="1.55" selected>Faol: 3–5 kun sport</option>
+            <option value="1.725">Juda faol: 6–7 kun sport</option>
+          </select>
+        </label>
+      </div>
+
+      <button id="calcBtn">Hisobla</button>
+      <button id="saveBtn" class="secondary">Saqlash</button>
+    </section>
+
+    <section class="card results">
+      <h2>2) Hisob-kitob natijalari</h2>
+      <div id="numbers" class="numbers"></div>
+      <p class="note">
+        ⚠️ Eslatma: 16 yoshda o'sish davom etadi. Juda past kaloriyaga tushish <b>taqiqlanadi</b>.
+        Bu ilova umumiy ma'lumot beradi, <b>shifokor/dietolog bilan maslahatlashish shart</b>.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>3) Ovqatlanish bo'yicha tavsiyalar</h2>
+      <div id="advice" class="advice"></div>
+      <div class="flex">
+        <button id="genPlan">Namuna menyu yarat</button>
+        <button id="shopList" class="secondary">Xarid ro'yxati</button>
+      </div>
+      <div id="menuPlan" class="plan"></div>
+      <div id="shoppingList" class="plan"></div>
+    </section>
+
+    <section class="card">
+      <h2>4) Kaloriya kalkulyatori</h2>
+      <div class="grid">
+        <label>Mahsulot
+          <select id="foodSelect">
+            <option value="guruch" data-kcal="130">Guruch (100g = 130 kcal)</option>
+            <option value="tovuq" data-kcal="165">Tovuq ko'kragi (100g = 165 kcal)</option>
+            <option value="olma" data-kcal="52">Olma (100g = 52 kcal)</option>
+            <option value="non" data-kcal="250">Non (100g = 250 kcal)</option>
+            <option value="tuxum" data-kcal="155">Tuxum (100g = 155 kcal)</option>
+            <option value="sut" data-kcal="60">Sut (100ml = 60 kcal)</option>
+          </select>
+        </label>
+        <label>Og'irlik (gramm/ml)
+          <input id="foodGram" type="number" min="1" value="100" />
+        </label>
+      </div>
+      <button id="addFood">Qo'shish</button>
+      <div id="foodList" class="plan"></div>
+      <p><b>Jami kaloriya:</b> <span id="totalKcal">0</span> kcal</p>
+    </section>
+
+    <section class="card">
+      <h2>5) Sog'lom odatlar — mini reja</h2>
+      <ul class="habits">
+        <li>Uyqu: 8 soatga yaqin.</li>
+        <li>Suv: kuniga 6–8 stakan.</li>
+        <li>Shirin gazli ichimliklarni cheklash.</li>
+        <li>Proteinni oshirish: tuxum, tovuq, baliq, loviya.</li>
+        <li>Har kuni 8–12k qadam, yoki 45–60 min faol yurish/sport.</li>
+        <li>Ertalabki nonushtani o'tkazib yubormaslik.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>© 2025 Soddalashtirilgan ilova. Tibbiy maslahat o'rnini <b>boshqarmaydi</b>.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
